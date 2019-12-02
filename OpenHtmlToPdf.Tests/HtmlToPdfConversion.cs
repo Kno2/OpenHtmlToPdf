@@ -58,7 +58,7 @@ namespace OpenHtmlToPdf.Tests
             var result = Pdf.From(html).OfSize(PaperSize.A4).Content();
 
             TextAssert.AreEqual(expectedDocumentContent, PdfDocumentReader.ToText(result));
-            Assert.AreEqual(_210mmInPostScriptPoints, PdfDocumentReader.WidthOfFirstPage(result));
+            Assert.AreEqual(596, PdfDocumentReader.WidthOfFirstPage(result));
             Assert.AreEqual(_297mmInPostScriptPoints, PdfDocumentReader.HeightOfFirstPage(result));
         }
 
